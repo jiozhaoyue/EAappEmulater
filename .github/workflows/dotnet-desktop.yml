@@ -104,10 +104,26 @@ jobs:
           Write-Host "Final contents:"
           Get-ChildItem
 
-      - name: Upload Artifact
+      - name: Upload Portable Artifact
         uses: actions/upload-artifact@v4
         with:
           name: EAappEmulater-win-x64
           path: publish/EAappEmulater-win-x64
+
+      - name: Install Inno Setup
+        shell: pwsh
+        run: |
+          choco install innosetup --no-progress
+
+      - name: Build Installer (Inno Setup)
+        shell: pwsh
+        run: |
+          & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer/EAappEmulater.iss
+
+      - name: Upload Installer Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: EAappEmulater-Setup
+          path: installer_output/EAappEmulater-Setup.exe
 
 
