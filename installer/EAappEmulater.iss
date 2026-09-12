@@ -8,7 +8,7 @@
 #define MyAppId "{{A1155EFC-E1C6-4ABC-B91E-8A6A391490E3}"
 
 #ifndef MyAppVersion
-#define MyAppVersion "1.9.1.5"
+#define MyAppVersion "1.9.1.6"
 #endif
 
 [Setup]

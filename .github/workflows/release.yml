@@ -76,7 +76,7 @@ jobs:
             $version = $rawVersion
           }
           if ([string]::IsNullOrWhiteSpace($version)) {
-            $version = "1.9.1.5"
+            $version = "1.9.1.6"
           }
           Write-Host "Building installer with version: $version"
           & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" /DMyAppVersion="$version" installer/EAappEmulater.iss

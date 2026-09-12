@@ -14,9 +14,9 @@
 [assembly: AssemblyTitle("EA App 模拟器")]
 [assembly: AssemblyCompany("https://github.com/CrazyZhang666/EAappEmulater")]
 [assembly: AssemblyProduct("EA App 模拟器")]
-[assembly: AssemblyVersion("1.9.1.5")]
-[assembly: AssemblyFileVersion("1.9.1.5")]
-[assembly: AssemblyInformationalVersion("1.9.1.5")]
+[assembly: AssemblyVersion("1.9.1.6")]
+[assembly: AssemblyFileVersion("1.9.1.6")]
+[assembly: AssemblyInformationalVersion("1.9.1.6")]
 
 // 不重复
 [assembly: AssemblyDescription("https://github.com/CrazyZhang666/EAappEmulater")]
