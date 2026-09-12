@@ -49,3 +49,25 @@ Created Inno Setup script supporting dual user/system install in a single EXE, a
 ### Status
 
 [OK] **Completed**
+
+
+## Session 3: Trigger CI and Publish Release v1.9.1.4
+<!-- trellis-session: v=2 fp=318bf7b02b00b70d -->
+
+**Date**: 2026-09-12
+**Task**: Trigger CI and Publish Release v1.9.1.4
+**Branch**: `main`
+
+### Summary
+
+Fixed upstream release action, bundled Chinese translation for Inno Setup, bumped version to 1.9.1.4, pushed tag and verified successful CI release publish on GitHub.
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `bd55901` | fix(ci): bundle ChineseSimplified.isl, add release permissions, and remove dead action |
+
+### Status
+
+[OK] **Completed**
