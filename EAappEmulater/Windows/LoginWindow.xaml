@@ -1,4 +1,4 @@
-﻿<ui:Window
+<ui:Window
     x:Class="EAappEmulater.Windows.LoginWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -10,7 +10,7 @@
     Title="{DynamicResource Windows.LoginWindow.Title}"
     Width="380"
     Height="660"
-    CaptionBackground="#FDFDFD"
+    CaptionBackground="{DynamicResource ThemeCaptionBackgroundBrush}"
     Closing="Window_Login_Closing"
     ContentRendered="Window_Login_ContentRendered"
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"

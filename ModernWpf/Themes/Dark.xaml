@@ -1,0 +1,64 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- 基础背景与前景 (现代深灰 Fluent 风格) -->
+    <Color x:Key="ThemeBackgroundColor">#202020</Color>
+    <SolidColorBrush x:Key="ThemeBackgroundBrush" Color="{StaticResource ThemeBackgroundColor}" />
+
+    <Color x:Key="ThemeCaptionBackgroundColor">#272727</Color>
+    <SolidColorBrush x:Key="ThemeCaptionBackgroundBrush" Color="{StaticResource ThemeCaptionBackgroundColor}" />
+
+    <Color x:Key="ThemeSidebarBackgroundColor">#252525</Color>
+    <SolidColorBrush x:Key="ThemeSidebarBackgroundBrush" Color="{StaticResource ThemeSidebarBackgroundColor}" />
+
+    <Color x:Key="ThemeCardBackgroundColor">#2D2D2D</Color>
+    <SolidColorBrush x:Key="ThemeCardBackgroundBrush" Color="{StaticResource ThemeCardBackgroundColor}" />
+
+    <Color x:Key="ThemeControlBackgroundColor">#2D2D2D</Color>
+    <SolidColorBrush x:Key="ThemeControlBackgroundBrush" Color="{StaticResource ThemeControlBackgroundColor}" />
+
+    <Color x:Key="ThemeForegroundColor">#F0F0F0</Color>
+    <SolidColorBrush x:Key="ThemeForegroundBrush" Color="{StaticResource ThemeForegroundColor}" />
+
+    <Color x:Key="ThemeSecondaryForegroundColor">#A0A0A0</Color>
+    <SolidColorBrush x:Key="ThemeSecondaryForegroundBrush" Color="{StaticResource ThemeSecondaryForegroundColor}" />
+
+    <!-- 边框与分割线 -->
+    <Color x:Key="ThemeBorderColor">#3E3E42</Color>
+    <SolidColorBrush x:Key="ThemeBorderBrush" Color="{StaticResource ThemeBorderColor}" />
+
+    <Color x:Key="ThemeWindowBorderColor">#383838</Color>
+    <SolidColorBrush x:Key="ThemeWindowBorderBrush" Color="{StaticResource ThemeWindowBorderColor}" />
+
+    <Color x:Key="ThemeCardBorderColor">#404040</Color>
+    <SolidColorBrush x:Key="ThemeCardBorderBrush" Color="{StaticResource ThemeCardBorderColor}" />
+
+    <Color x:Key="ThemeSeparatorColor">#3E3E42</Color>
+    <SolidColorBrush x:Key="ThemeSeparatorBrush" Color="{StaticResource ThemeSeparatorColor}" />
+
+    <!-- 交互状态：悬停与选中 -->
+    <Color x:Key="ThemeHoverBackgroundColor">#383838</Color>
+    <SolidColorBrush x:Key="ThemeHoverBackgroundBrush" Color="{StaticResource ThemeHoverBackgroundColor}" />
+
+    <Color x:Key="ThemeSelectedBackgroundColor">#484848</Color>
+    <SolidColorBrush x:Key="ThemeSelectedBackgroundBrush" Color="{StaticResource ThemeSelectedBackgroundColor}" />
+
+    <!-- 窗口控制按钮 -->
+    <Color x:Key="ThemeWinButtonOverBackgroundColor">#383838</Color>
+    <SolidColorBrush x:Key="ThemeWinButtonOverBackgroundBrush" Color="{StaticResource ThemeWinButtonOverBackgroundColor}" />
+
+    <Color x:Key="ThemeWinButtonPressedBackgroundColor">#484848</Color>
+    <SolidColorBrush x:Key="ThemeWinButtonPressedBackgroundBrush" Color="{StaticResource ThemeWinButtonPressedBackgroundColor}" />
+
+    <Color x:Key="ThemeWinButtonForegroundColor">#F0F0F0</Color>
+    <SolidColorBrush x:Key="ThemeWinButtonForegroundBrush" Color="{StaticResource ThemeWinButtonForegroundColor}" />
+
+    <!-- 右键菜单 -->
+    <Color x:Key="ThemeContextMenuBackgroundColor">#2B2B2B</Color>
+    <SolidColorBrush x:Key="ThemeContextMenuBackgroundBrush" Color="{StaticResource ThemeContextMenuBackgroundColor}" />
+
+    <Color x:Key="ThemeContextMenuBorderColor">#3E3E42</Color>
+    <SolidColorBrush x:Key="ThemeContextMenuBorderBrush" Color="{StaticResource ThemeContextMenuBorderColor}" />
+
+</ResourceDictionary>

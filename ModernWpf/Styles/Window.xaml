@@ -1,4 +1,4 @@
-﻿<ResourceDictionary
+<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="clr-namespace:ModernWpf.Controls">
@@ -7,11 +7,10 @@
     <Style x:Key="SystemWindowStyle" TargetType="{x:Type controls:Window}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="Foreground" Value="#000000" />
-        <Setter Property="BorderBrush" Value="#4F4D4B" />
-        <Setter Property="Background" Value="#FDFDFD" />
-        <Setter Property="CaptionBackground" Value="#FAFAFA" />
+        <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeWindowBorderBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}" />
+        <Setter Property="CaptionBackground" Value="{DynamicResource ThemeCaptionBackgroundBrush}" />
         <Setter Property="IsShowMaskLayer" Value="False" />
         <Setter Property="Template">
             <Setter.Value>
@@ -58,28 +57,31 @@
                                         x:Name="ButtonMin"
                                         Command="SystemCommands.MinimizeWindowCommand"
                                         Icon="&#xE921;"
-                                        OverBackground="#DBDBDB"
-                                        OverForeground="Black"
-                                        PressedBackground="#C2C2C2"
-                                        PressedForeground="Black"
+                                        Foreground="{DynamicResource ThemeWinButtonForegroundBrush}"
+                                        OverBackground="{DynamicResource ThemeWinButtonOverBackgroundBrush}"
+                                        OverForeground="{DynamicResource ThemeWinButtonForegroundBrush}"
+                                        PressedBackground="{DynamicResource ThemeWinButtonPressedBackgroundBrush}"
+                                        PressedForeground="{DynamicResource ThemeWinButtonForegroundBrush}"
                                         ToolTip="最小化" />
                                     <controls:WinButton
                                         x:Name="ButtonMax"
                                         Command="SystemCommands.MaximizeWindowCommand"
                                         Icon="&#xE922;"
-                                        OverBackground="#DBDBDB"
-                                        OverForeground="Black"
-                                        PressedBackground="#C2C2C2"
-                                        PressedForeground="Black"
+                                        Foreground="{DynamicResource ThemeWinButtonForegroundBrush}"
+                                        OverBackground="{DynamicResource ThemeWinButtonOverBackgroundBrush}"
+                                        OverForeground="{DynamicResource ThemeWinButtonForegroundBrush}"
+                                        PressedBackground="{DynamicResource ThemeWinButtonPressedBackgroundBrush}"
+                                        PressedForeground="{DynamicResource ThemeWinButtonForegroundBrush}"
                                         ToolTip="最大化" />
                                     <controls:WinButton
                                         x:Name="ButtonRestore"
                                         Command="SystemCommands.RestoreWindowCommand"
                                         Icon="&#xE923;"
-                                        OverBackground="#DBDBDB"
-                                        OverForeground="Black"
-                                        PressedBackground="#C2C2C2"
-                                        PressedForeground="Black"
+                                        Foreground="{DynamicResource ThemeWinButtonForegroundBrush}"
+                                        OverBackground="{DynamicResource ThemeWinButtonOverBackgroundBrush}"
+                                        OverForeground="{DynamicResource ThemeWinButtonForegroundBrush}"
+                                        PressedBackground="{DynamicResource ThemeWinButtonPressedBackgroundBrush}"
+                                        PressedForeground="{DynamicResource ThemeWinButtonForegroundBrush}"
                                         ToolTip="向下还原" />
                                     <controls:WinButton
                                         x:Name="ButtonClose"
@@ -168,10 +170,10 @@
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="Foreground" Value="#000000" />
-        <Setter Property="BorderBrush" Value="#4F4D4B" />
-        <Setter Property="Background" Value="#FDFDFD" />
-        <Setter Property="CaptionBackground" Value="#FAFAFA" />
+        <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeWindowBorderBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}" />
+        <Setter Property="CaptionBackground" Value="{DynamicResource ThemeCaptionBackgroundBrush}" />
         <Setter Property="IsShowMaskLayer" Value="False" />
         <Setter Property="Template">
             <Setter.Value>
@@ -208,28 +210,31 @@
                                         x:Name="ButtonMin"
                                         Command="SystemCommands.MinimizeWindowCommand"
                                         Icon="&#xE921;"
-                                        OverBackground="#DBDBDB"
-                                        OverForeground="Black"
-                                        PressedBackground="#C2C2C2"
-                                        PressedForeground="Black"
+                                        Foreground="{DynamicResource ThemeWinButtonForegroundBrush}"
+                                        OverBackground="{DynamicResource ThemeWinButtonOverBackgroundBrush}"
+                                        OverForeground="{DynamicResource ThemeWinButtonForegroundBrush}"
+                                        PressedBackground="{DynamicResource ThemeWinButtonPressedBackgroundBrush}"
+                                        PressedForeground="{DynamicResource ThemeWinButtonForegroundBrush}"
                                         ToolTip="最小化" />
                                     <controls:WinButton
                                         x:Name="ButtonMax"
                                         Command="SystemCommands.MaximizeWindowCommand"
                                         Icon="&#xE922;"
-                                        OverBackground="#DBDBDB"
-                                        OverForeground="Black"
-                                        PressedBackground="#C2C2C2"
-                                        PressedForeground="Black"
+                                        Foreground="{DynamicResource ThemeWinButtonForegroundBrush}"
+                                        OverBackground="{DynamicResource ThemeWinButtonOverBackgroundBrush}"
+                                        OverForeground="{DynamicResource ThemeWinButtonForegroundBrush}"
+                                        PressedBackground="{DynamicResource ThemeWinButtonPressedBackgroundBrush}"
+                                        PressedForeground="{DynamicResource ThemeWinButtonForegroundBrush}"
                                         ToolTip="最大化" />
                                     <controls:WinButton
                                         x:Name="ButtonRestore"
                                         Command="SystemCommands.RestoreWindowCommand"
                                         Icon="&#xE923;"
-                                        OverBackground="#DBDBDB"
-                                        OverForeground="Black"
-                                        PressedBackground="#C2C2C2"
-                                        PressedForeground="Black"
+                                        Foreground="{DynamicResource ThemeWinButtonForegroundBrush}"
+                                        OverBackground="{DynamicResource ThemeWinButtonOverBackgroundBrush}"
+                                        OverForeground="{DynamicResource ThemeWinButtonForegroundBrush}"
+                                        PressedBackground="{DynamicResource ThemeWinButtonPressedBackgroundBrush}"
+                                        PressedForeground="{DynamicResource ThemeWinButtonForegroundBrush}"
                                         ToolTip="向下还原" />
                                     <controls:WinButton
                                         x:Name="ButtonClose"
@@ -318,10 +323,10 @@
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="Foreground" Value="#000000" />
-        <Setter Property="BorderBrush" Value="#4F4D4B" />
-        <Setter Property="Background" Value="#FAFAFA" />
-        <Setter Property="CaptionBackground" Value="#FAFAFA" />
+        <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeWindowBorderBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ThemeCaptionBackgroundBrush}" />
+        <Setter Property="CaptionBackground" Value="{DynamicResource ThemeCaptionBackgroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:Window}">
@@ -346,28 +351,31 @@
                                     x:Name="ButtonMin"
                                     Command="SystemCommands.MinimizeWindowCommand"
                                     Icon="&#xE921;"
-                                    OverBackground="#DBDBDB"
-                                    OverForeground="Black"
-                                    PressedBackground="#C2C2C2"
-                                    PressedForeground="Black"
+                                    Foreground="{DynamicResource ThemeWinButtonForegroundBrush}"
+                                    OverBackground="{DynamicResource ThemeWinButtonOverBackgroundBrush}"
+                                    OverForeground="{DynamicResource ThemeWinButtonForegroundBrush}"
+                                    PressedBackground="{DynamicResource ThemeWinButtonPressedBackgroundBrush}"
+                                    PressedForeground="{DynamicResource ThemeWinButtonForegroundBrush}"
                                     ToolTip="最小化" />
                                 <controls:WinButton
                                     x:Name="ButtonMax"
                                     Command="SystemCommands.MaximizeWindowCommand"
                                     Icon="&#xE922;"
-                                    OverBackground="#DBDBDB"
-                                    OverForeground="Black"
-                                    PressedBackground="#C2C2C2"
-                                    PressedForeground="Black"
+                                    Foreground="{DynamicResource ThemeWinButtonForegroundBrush}"
+                                    OverBackground="{DynamicResource ThemeWinButtonOverBackgroundBrush}"
+                                    OverForeground="{DynamicResource ThemeWinButtonForegroundBrush}"
+                                    PressedBackground="{DynamicResource ThemeWinButtonPressedBackgroundBrush}"
+                                    PressedForeground="{DynamicResource ThemeWinButtonForegroundBrush}"
                                     ToolTip="最大化" />
                                 <controls:WinButton
                                     x:Name="ButtonRestore"
                                     Command="SystemCommands.RestoreWindowCommand"
                                     Icon="&#xE923;"
-                                    OverBackground="#DBDBDB"
-                                    OverForeground="Black"
-                                    PressedBackground="#C2C2C2"
-                                    PressedForeground="Black"
+                                    Foreground="{DynamicResource ThemeWinButtonForegroundBrush}"
+                                    OverBackground="{DynamicResource ThemeWinButtonOverBackgroundBrush}"
+                                    OverForeground="{DynamicResource ThemeWinButtonForegroundBrush}"
+                                    PressedBackground="{DynamicResource ThemeWinButtonPressedBackgroundBrush}"
+                                    PressedForeground="{DynamicResource ThemeWinButtonForegroundBrush}"
                                     ToolTip="向下还原" />
                                 <controls:WinButton
                                     x:Name="ButtonClose"

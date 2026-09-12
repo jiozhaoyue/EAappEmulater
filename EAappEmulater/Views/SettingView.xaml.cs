@@ -1,4 +1,4 @@
-﻿using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Input;
 using EAappEmulater.Helper;
 using EAappEmulater.Utils;
 using System.Collections.ObjectModel;
@@ -39,8 +39,35 @@ public partial class SettingView : UserControl, INotifyPropertyChanged
                     Globals.Language = _currentLanguage;
                     Globals.DefaultLanguage = _currentLanguage;
                     Globals.Write();
+                    LoadThemes();
                 }
                 catch { }
+            }
+        }
+    }
+
+    private ObservableCollection<ThemeEntry> _themeList = new();
+    public ObservableCollection<ThemeEntry> ThemeList
+    {
+        get => _themeList;
+        set { _themeList = value; OnPropertyChanged(nameof(ThemeList)); }
+    }
+
+    private string _currentTheme = "System";
+    public string CurrentTheme
+    {
+        get => _currentTheme;
+        set
+        {
+            if (_currentTheme == value) return;
+            _currentTheme = value;
+            OnPropertyChanged(nameof(CurrentTheme));
+
+            if (Enum.TryParse(_currentTheme, out ModernWpf.Themes.ThemeType themeType))
+            {
+                ModernWpf.Themes.ThemeManager.ApplyTheme(themeType);
+                Globals.Theme = _currentTheme;
+                Globals.Write();
             }
         }
     }
@@ -60,7 +87,25 @@ public partial class SettingView : UserControl, INotifyPropertyChanged
         if (string.IsNullOrWhiteSpace(CurrentLanguage) && LanguageList.Count > 0)
             CurrentLanguage = LanguageList[0].Code;
 
+        // load themes
+        LoadThemes();
+        CurrentTheme = string.IsNullOrWhiteSpace(Globals.Theme) ? "System" : Globals.Theme;
+
         DataContext = this;
+    }
+
+    private void LoadThemes()
+    {
+        string systemName = Application.Current.TryFindResource("Views.SettingView.ThemeSystem") as string ?? "跟随系统 (System)";
+        string lightName = Application.Current.TryFindResource("Views.SettingView.ThemeLight") as string ?? "浅色模式 (Light)";
+        string darkName = Application.Current.TryFindResource("Views.SettingView.ThemeDark") as string ?? "深色模式 (Dark)";
+
+        ThemeList = new ObservableCollection<ThemeEntry>
+        {
+            new ThemeEntry { Code = "System", Name = systemName },
+            new ThemeEntry { Code = "Light", Name = lightName },
+            new ThemeEntry { Code = "Dark", Name = darkName }
+        };
     }
 
     private void OnPropertyChanged(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
@@ -101,6 +146,13 @@ public partial class SettingView : UserControl, INotifyPropertyChanged
             Globals.Language = CurrentLanguage;
             Globals.DefaultLanguage = CurrentLanguage;
             Globals.Write();
+            LoadThemes();
         }
     }
+}
+
+public class ThemeEntry
+{
+    public string Code { get; set; } = string.Empty;
+    public string Name { get; set; } = string.Empty;
 }

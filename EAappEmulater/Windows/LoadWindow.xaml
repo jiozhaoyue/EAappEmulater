@@ -1,4 +1,4 @@
-﻿<ui:Window
+<ui:Window
     x:Class="EAappEmulater.Windows.LoadWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -9,7 +9,7 @@
     Title="{DynamicResource Windows.LoadWindow.Title}"
     Width="480"
     Height="270"
-    CaptionBackground="#FDFDFD"
+    CaptionBackground="{DynamicResource ThemeCaptionBackgroundBrush}"
     Closing="Window_Load_Closing"
     ContentRendered="Window_Load_ContentRendered"
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"

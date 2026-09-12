@@ -1,4 +1,4 @@
-﻿namespace ModernWpf.Controls;
+namespace ModernWpf.Controls;
 
 public class Window : System.Windows.Window
 {
@@ -67,8 +67,13 @@ public class Window : System.Windows.Window
         // 窗口默认居中
         WindowStartupLocation = WindowStartupLocation.CenterScreen;
         // 窗口边框
-        BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4F4D4B"));
+        SetResourceReference(BorderBrushProperty, "ThemeWindowBorderBrush");
         BorderThickness = new Thickness(1);
+
+        SourceInitialized += (s, e) =>
+        {
+            ModernWpf.Themes.ThemeManager.SetWindowImmersiveDarkMode(this, ModernWpf.Themes.ThemeManager.ActualTheme == ModernWpf.Themes.ThemeType.Dark);
+        };
 
         // 窗口最小化
         CommandBindings.Add(new CommandBinding(SystemCommands.MinimizeWindowCommand, (sender, e) =>

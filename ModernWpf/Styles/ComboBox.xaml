@@ -1,4 +1,4 @@
-﻿<ResourceDictionary
+<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="clr-namespace:ModernWpf.Controls"
@@ -12,8 +12,8 @@
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="Background" Value="White" />
-        <Setter Property="BorderBrush" Value="{StaticResource BorderColor}" />
+        <Setter Property="Background" Value="{DynamicResource ThemeControlBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderBrush}" />
         <Setter Property="BorderThickness" Value="0,1,1,1" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template">
@@ -28,6 +28,7 @@
                             x:Name="IconFont"
                             FontSize="14"
                             FontWeight="Bold"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
                             Icon="&#xE70D;"
                             RenderTransformOrigin="0.5,0.5">
                             <controls:IconFont.RenderTransform>
@@ -76,8 +77,8 @@
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="Foreground" Value="Black" />
-        <Setter Property="Background" Value="White" />
+        <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ThemeControlBackgroundBrush}" />
         <Setter Property="Padding" Value="5" />
         <Setter Property="Margin" Value="5" />
         <Setter Property="Height" Value="35" />
@@ -89,8 +90,8 @@
                     <Setter Property="OverridesDefaultStyle" Value="True" />
                     <Setter Property="SnapsToDevicePixels" Value="True" />
                     <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-                    <Setter Property="Foreground" Value="Black" />
-                    <Setter Property="Background" Value="White" />
+                    <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}" />
+                    <Setter Property="Background" Value="{DynamicResource ThemeControlBackgroundBrush}" />
                     <Setter Property="Cursor" Value="Hand" />
                     <Setter Property="Template">
                         <Setter.Value>
@@ -101,16 +102,16 @@
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="{TemplateBinding BorderThickness}">
-                                    <Border BorderBrush="#E5E5E5" BorderThickness="0,0,0,1">
+                                    <Border BorderBrush="{DynamicResource ThemeBorderBrush}" BorderThickness="0,0,0,1">
                                         <ContentPresenter />
                                     </Border>
                                 </Border>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#F1F1F1" />
+                                        <Setter Property="Background" Value="{DynamicResource ThemeHoverBackgroundBrush}" />
                                     </Trigger>
                                     <Trigger Property="IsSelected" Value="True">
-                                        <Setter Property="Background" Value="#E6E6E6" />
+                                        <Setter Property="Background" Value="{DynamicResource ThemeSelectedBackgroundBrush}" />
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
@@ -130,7 +131,7 @@
                         <Border
                             Grid.Column="0"
                             Background="{TemplateBinding Background}"
-                            BorderBrush="{StaticResource BorderColor}"
+                            BorderBrush="{DynamicResource ThemeBorderBrush}"
                             BorderThickness="1,1,0,1"
                             SnapsToDevicePixels="True">
                             <ContentPresenter
@@ -165,7 +166,7 @@
                                     x:Name="DropDown"
                                     MinWidth="{TemplateBinding ActualWidth}"
                                     MaxHeight="{TemplateBinding MaxDropDownHeight}"
-                                    BorderBrush="{StaticResource BorderColor}"
+                                    BorderBrush="{DynamicResource ThemeBorderBrush}"
                                     BorderThickness="1"
                                     SnapsToDevicePixels="True">
                                     <ScrollViewer
@@ -178,7 +179,7 @@
                                         VirtualizingPanel.ScrollUnit="Item"
                                         VirtualizingPanel.VirtualizationMode="Recycling">
                                         <StackPanel
-                                            Background="White"
+                                            Background="{DynamicResource ThemeControlBackgroundBrush}"
                                             IsItemsHost="True"
                                             KeyboardNavigation.DirectionalNavigation="Contained" />
                                     </ScrollViewer>

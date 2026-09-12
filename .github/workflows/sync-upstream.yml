@@ -1,0 +1,47 @@
+name: Sync Upstream
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Run daily at 00:00 UTC
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  sync-upstream:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Add and fetch upstream
+        run: |
+          git remote add upstream https://github.com/CrazyZhang666/EAappEmulater.git || true
+          git fetch upstream main
+
+      - name: Merge upstream changes
+        run: |
+          git checkout main
+          # Check if upstream has new commits
+          NEW_COMMITS=$(git log HEAD..upstream/main --oneline)
+          if [ -z "$NEW_COMMITS" ]; then
+            echo "No new commits found from upstream. Already up to date."
+            exit 0
+          fi
+
+          echo "Found new upstream commits:"
+          echo "$NEW_COMMITS"
+          
+          # Attempt to merge upstream/main
+          git merge upstream/main -m "chore: sync latest upstream changes"
+          git push origin main

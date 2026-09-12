@@ -1,4 +1,4 @@
-﻿using EAappEmulater.Core;
+using EAappEmulater.Core;
 using EAappEmulater.Enums;
 using EAappEmulater.Helper;
 using EAappEmulater.Utils;
@@ -33,6 +33,11 @@ public static class Globals
     /// </summary>
     public static bool AutoLoginEnabled { get; set; } = false;
 
+    /// <summary>
+    /// 程序主题设置: System, Light, Dark (默认跟随系统)
+    /// </summary>
+    public static string Theme { get; set; } = "System";
+
     static Globals()
     {
         _configPath = Path.Combine(CoreUtil.Dir_Config, "Config.ini");
@@ -48,6 +53,17 @@ public static class Globals
         var slot = IniHelper.ReadString("Globals", "AccountSlot", _configPath);
         var defaultLanguage = IniHelper.ReadString("Globals", "lang", _configPath);
         var autoLoginEnabled = IniHelper.ReadString("Globals", "AutoLoginEnabled", _configPath);
+        var theme = IniHelper.ReadString("Globals", "Theme", _configPath);
+
+        if (!string.IsNullOrWhiteSpace(theme))
+        {
+            Theme = theme;
+            LoggerHelper.Info($"[Globals] Read Theme config: {Theme}");
+        }
+        else
+        {
+            Theme = "System";
+        }
 
         LoggerHelper.Info(I18nHelper.I18n._("Globals.CurrentConfigPath", _configPath));
         LoggerHelper.Info(I18nHelper.I18n._("Globals.ReadConfigSuccess", slot));
@@ -121,6 +137,7 @@ public static class Globals
             IniHelper.WriteString("Globals", "AccountSlot", $"{AccountSlot}", _configPath);
             IniHelper.WriteString("Globals", "lang", DefaultLanguage ?? string.Empty, _configPath);
             IniHelper.WriteString("Globals", "AutoLoginEnabled", $"{AutoLoginEnabled}", _configPath);
+            IniHelper.WriteString("Globals", "Theme", Theme ?? "System", _configPath);
 
             LoggerHelper.Info(I18nHelper.I18n._("Globals.SaveGlobalConfigPath", _configPath));
             LoggerHelper.Info(I18nHelper.I18n._("Globals.SaveGlobalConfigSuccess"));

@@ -1,4 +1,4 @@
-﻿<ui:Window
+<ui:Window
     x:Class="EAappEmulater.Windows.AccountWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -9,7 +9,7 @@
     Title="{DynamicResource Windows.AccountWindow.Title}"
     Width="600"
     Height="400"
-    CaptionBackground="#FDFDFD"
+    CaptionBackground="{DynamicResource ThemeCaptionBackgroundBrush}"
     Closing="Window_Account_Closing"
     ContentRendered="Window_Account_ContentRendered"
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"

@@ -123,6 +123,10 @@
     <sys:String x:Key="Views.SettingView.Tools">Nutzliche Tools</sys:String>
     <sys:String x:Key="Views.SettingView.OpenConfigFolder">Konfigurationsordner oeffnen</sys:String>
     <sys:String x:Key="Views.SettingView.ChangeLanguage">Sprache aendern</sys:String>
+    <sys:String x:Key="Views.SettingView.Theme">Design</sys:String>
+    <sys:String x:Key="Views.SettingView.ThemeSystem">System</sys:String>
+    <sys:String x:Key="Views.SettingView.ThemeLight">Hell</sys:String>
+    <sys:String x:Key="Views.SettingView.ThemeDark">Dunkel</sys:String>
 
     <!--Views/LogView.xaml-->
     <sys:String x:Key="Views.LogView.Time">Zeit</sys:String>

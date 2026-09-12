@@ -1,4 +1,4 @@
-﻿﻿using EAappEmulater.Helper;
+﻿using EAappEmulater.Helper;
 using EAappEmulater.Utils;
 using EAappEmulater.Windows;
 
@@ -25,6 +25,16 @@ public partial class App : Application
     {
         // Load global config first so we know if user specified a language
         Globals.Read();
+
+        // Apply theme early (default is System)
+        if (Enum.TryParse(Globals.Theme, out ModernWpf.Themes.ThemeType themeType))
+        {
+            ModernWpf.Themes.ThemeManager.ApplyTheme(themeType);
+        }
+        else
+        {
+            ModernWpf.Themes.ThemeManager.ApplyTheme(ModernWpf.Themes.ThemeType.System);
+        }
 
         // Determine language to set following rules:
         // - If Config (Globals.DefaultLanguage) has a supported language -> use it
