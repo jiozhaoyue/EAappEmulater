@@ -10,6 +10,8 @@ on:
 jobs:
   build-and-release:
     runs-on: windows-latest
+    permissions:
+      contents: write
 
     defaults:
       run:
@@ -79,28 +81,12 @@ jobs:
           Write-Host "Building installer with version: $version"
           & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" /DMyAppVersion="$version" installer/EAappEmulater.iss
 
-      # 查找此 commit 对应的 PR
-      - name: Find Related Pull Request
-        id: find_pr
-        uses: actions-ecosystem/action-get-related-pr@v1
-        with:
-          commit_sha: ${{ github.sha }}
-
-      # 生成 Release 名字 和 Body
-        # 如果找不到 PR，会 fallback 到 tag 名
-      - name: Prepare Release Notes
-        id: notes
-        shell: bash
-        run: |
-          echo "title=${{ steps.find_pr.outputs.title || github.ref_name }}" >> "$GITHUB_OUTPUT"
-          echo "body=${{ steps.find_pr.outputs.body || 'EAappEmulater release' }}" >> "$GITHUB_OUTPUT"
-
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
-          name: ${{ steps.notes.outputs.title }}
-          body: ${{ steps.notes.outputs.body }}
+          name: EAappEmulater ${{ github.ref_name }}
+          generate_release_notes: true
           draft: false
           prerelease: false
           files: |
