@@ -8,7 +8,7 @@
 #define MyAppId "{{A1155EFC-E1C6-4ABC-B91E-8A6A391490E3}"
 
 #ifndef MyAppVersion
-#define MyAppVersion "1.9.1.4"
+#define MyAppVersion "1.9.1.5"
 #endif
 
 [Setup]
@@ -65,5 +65,5 @@ Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
 [Run]
-; 安装完成后提示运行应用
-Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
+; 安装完成后提示运行应用 (使用 shellexec 与 runascurrentuser 避免 CreateProcess 740 提权错误)
+Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent shellexec runascurrentuser
