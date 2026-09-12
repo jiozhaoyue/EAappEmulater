@@ -27,3 +27,25 @@ Synchronized upstream repository, created auto-sync CI workflow, and implemented
 ### Status
 
 [OK] **Completed**
+
+
+## Session 2: Inno Setup Dual Installer and CI Integration
+<!-- trellis-session: v=2 fp=6fe13d02019af3d2 -->
+
+**Date**: 2026-09-12
+**Task**: Inno Setup Dual Installer and CI Integration
+**Branch**: `main`
+
+### Summary
+
+Created Inno Setup script supporting dual user/system install in a single EXE, and updated dotnet-desktop.yml and release.yml to build and publish both portable and installer artifacts.
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `92bb8c9` | feat: add Inno Setup dual-mode installer and integrate into packaging/release CI |
+
+### Status
+
+[OK] **Completed**
