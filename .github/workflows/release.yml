@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - 'v*'
+      - '[0-9]+.*'
   workflow_dispatch:
 
 jobs:
@@ -73,7 +74,7 @@ jobs:
             $version = $rawVersion
           }
           if ([string]::IsNullOrWhiteSpace($version)) {
-            $version = "1.9.1.3"
+            $version = "1.9.1.4"
           }
           Write-Host "Building installer with version: $version"
           & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" /DMyAppVersion="$version" installer/EAappEmulater.iss
@@ -89,9 +90,10 @@ jobs:
         # 如果找不到 PR，会 fallback 到 tag 名
       - name: Prepare Release Notes
         id: notes
+        shell: bash
         run: |
-          echo "title=${{ steps.find_pr.outputs.title || github.ref_name }}" >> $GITHUB_OUTPUT
-          echo "body=${{ steps.find_pr.outputs.body || 'No PR description available.' }}" >> $GITHUB_OUTPUT
+          echo "title=${{ steps.find_pr.outputs.title || github.ref_name }}" >> "$GITHUB_OUTPUT"
+          echo "body=${{ steps.find_pr.outputs.body || 'EAappEmulater release' }}" >> "$GITHUB_OUTPUT"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
